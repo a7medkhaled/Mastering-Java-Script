@@ -58,8 +58,30 @@ const tt = function y() {
 tt(); //this is right
 //y(); // this is wrong
 
-1;
-1;
-2;
-1;
-1;
+// multiple functions
+
+doA(function () {
+  doB();
+
+  doC(function () {
+    doD();
+  });
+
+  doE();
+});
+
+doF();
+
+function doA(fun) {
+  fun();
+}
+function doB(fun) {}
+
+function doC(fun) {
+  fun();
+}
+function doD(fun) {}
+
+function doE(fun) {}
+
+function doF(fun) {}
